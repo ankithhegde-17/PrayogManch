@@ -3,6 +3,10 @@
    root stacking context: above the off-white html/body background, beneath all content, and never
    receives input. Page-level wrappers must stay transparent or they would cover it. */
 .page-grid{position:fixed;inset:0;z-index:-1;display:block;width:100%;height:100%;pointer-events:none}
+:root{--radius-sm:10px;--radius-md:12px;--radius-lg:18px;--radius-xl:24px;--radius-pill:9999px}
+/* Shared shape scale for the active component surfaces. Intentional pills and circular geometry are retained. */
+body .site-shell{border-radius:var(--radius-lg)!important}body .project-card{border-radius:var(--radius-lg)!important}body .project-image{border-radius:var(--radius-md)!important}body .about{border-radius:var(--radius-xl)!important}body .button,body .header-contact,body .project-actions .github-button,body .project-actions .visit-button,body .about-action{border-radius:var(--radius-pill)!important}body .github-button,body .visit-button,body .contact-links a,body .connect-list a{border-radius:var(--radius-sm)!important}body .tools-grid article,body .work-list article,body .nav-open{border-radius:var(--radius-md)!important}
+body .featured-projects-heading,body .about-eyebrow{text-transform:none!important;letter-spacing:.02em!important}
 /* Final responsive spacing pass. Project media retains its approved framing, aspect ratio, and object fit. */
 body .projects-intro h1{letter-spacing:-2.25px!important}
 @media(max-width:1024px){body .hero-section{padding:52px 0 56px!important;gap:36px!important}body .hero-visual{min-height:315px!important}body .projects{padding:32px 0 40px!important}body .project-list{gap:14px!important}body .project-card{min-height:0!important;padding:16px 20px!important;gap:22px!important}}
