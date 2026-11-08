@@ -11,13 +11,13 @@ import { useEffect, useRef } from 'react'
 type Point = { dx: number; dy: number; vx: number; vy: number }
 
 const SPACING = 76
-const RADIUS = 170
-const PUSH = 10 // max displacement in px: a subtle bend
-const STIFFNESS = 0.06 // soft spring for a smooth, slow ease back to rest
+const RADIUS = 155
+const PUSH = 7 // max displacement in px: a restrained bend
+const STIFFNESS = 0.055 // soft spring for a smooth, slow ease back to rest
 const DAMPING = 0.8
 // Light cool grey: about 6-7 grey levels of contrast against the off-white page. Clearly visible
 // but quiet. (~3 levels disappeared on typical screens; ~10 competed with content.)
-const STROKE = 'rgba(214, 216, 224, 0.22)'
+const STROKE = 'rgba(186, 190, 207, 0.15)'
 const LINE_WIDTH = 1 // thinner lines blur to near-nothing at 100-125% display scaling
 
 const restingPoint = (): Point => ({ dx: 0, dy: 0, vx: 0, vy: 0 })
@@ -101,7 +101,9 @@ export function InteractiveGrid() {
         else Object.assign(point, restingPoint())
       }
       draw()
-      if (animating() && (moving || pointer)) frame = requestAnimationFrame(tick)
+      // A settled deformation can remain drawn without keeping a frame loop alive. Pointer
+      // movement schedules the next spring update, which avoids idle work while preserving feel.
+      if (animating() && moving) frame = requestAnimationFrame(tick)
     }
 
     const schedule = () => {

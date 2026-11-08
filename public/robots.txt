@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://prayogmanch-dcba.vercel.app/sitemap.xml
