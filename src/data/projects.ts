@@ -1,0 +1,5 @@
+export type ProjectStatus = 'live' | 'coming-soon'
+export type Project = { id:string; number:string; name:string; description:string; tags:string[]; image:string; imageAlt:string; websiteUrl?:string; githubUrl?:string; status:ProjectStatus }
+export const projects: Project[] = [
+{id:'campus-unify',number:'01',name:'Campus Unify',description:'Multi-campus ERP platform for administration, student management, and fee operations.',tags:['ERP','Education','Multi-Campus'],image:'/images/projects/campus-unify.png',imageAlt:'Campus Unify institution overview dashboard',websiteUrl:'https://met.prayogmanch.in/',githubUrl:'https://github.com/ankithhegde-17/campus-unify',status:'live'},
+{id:'resume-lens',number:'02',name:'Resume Lens.ai',description:'An AI-powered platform for resume analysis, job-role matching, and personalized career guidance.',tags:['AI','Resume Analysis','Career Guidance'],image:'/images/projects/resume-lens.png',imageAlt:'Resume Lens.ai career workspace dashboard',websiteUrl:'https://resumelens.prayogmanch.in/',githubUrl:'https://github.com/ankithhegde-17/ResumeLens',status:'live'}]

@@ -1,0 +1,2 @@
+const tools: [string, string[]][]=[['Frontend development',['React','TypeScript','Responsive web interfaces']],['Backend development',['Application architecture','APIs']],['Databases',['Data modelling','Data-driven applications']],['AI and Data Science',['Artificial intelligence','Data science']],['Developer tools',['Git','Vite']]]
+export const aboutProfile={name:'Ankith Hegde',email:'ankithhegde001@gmail.com',portfolio:'https://ankithhegde.com/',github:'https://github.com/ankithhegde-17',linkedin:'https://www.linkedin.com/in/hegdeankith/',tools}
